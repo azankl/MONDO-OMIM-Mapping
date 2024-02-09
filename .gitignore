@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+hp.obo.txt
+mondo.obo
+mondo_omim_skeldys_table.tsv
+mondo_omim_table.tsv
