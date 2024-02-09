@@ -39,6 +39,9 @@ mondo_omim_table <- simplify2array(mondo) %>% #Convert to array
   separate(xref, into = c("Ontology","Term"), sep = ":") %>% #separate ontology from code
 # filter(Ontology %in% c('OMIM','OMIMPS')) #if we want to include the OMIMPS (OMIM Phenotypic Series)
   filter(Ontology == 'OMIM')
+#write to file
+write_tsv(mondo_omim_table,here("mondo_omim_table.tsv"))
+
 
 #select all disorders under 'skeletal dysplasia' in MONDO in the MONDO-OMIM table 
 mondo_skeldys_IDs<-get_descendants(mondo, roots = "MONDO:0018230") #skeletal dysplasia
@@ -46,4 +49,6 @@ mondo_skeldys_table<-mondo_table %>%
   filter(id %in% mondo_skeldys_IDs)
 mondo_OMIM_skeldys_table<-mondo_omim_table %>%
   filter(id %in% mondo_skeldys_IDs)
+#write mondo_omim_skeldys_table to file
+write_tsv(mondo_OMIM_skeldys_table,here("mondo_omim_skeldys_table.tsv"))
 
