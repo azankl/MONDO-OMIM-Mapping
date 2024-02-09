@@ -6,7 +6,7 @@ library(ontologyIndex)
 library(here)
 
 #works with HPO
-hpo <- get_ontology(here("hp.obo.txt"),
+hpo <- get_ontology(here("hp.obo.txt"),#get hpo.obo.txt file from https://hpo.jax.org/app/data/ontology
                     extract_tags = "everything") #Read HPO file 
 hpo_table <- simplify2array(hpo) %>% #Convert to array
   as_tibble() %>% #Convert to tibble
